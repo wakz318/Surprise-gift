@@ -1,1 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise 💕</title>
 
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 190, 205, .35), transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(220, 185, 205, .30), transparent 30%),
+        linear-gradient(135deg, #fff8f4, #f8e9ed);
+
+    color: #654d55;
+}
+
+
+/* FLOATING DECORATIONS */
+
+.floating {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.floating span {
+    position: absolute;
+    bottom: -50px;
+    font-size: 20px;
+    opacity: .30;
+    animation: floatUp linear infinite;
+}
+
+.floating span:nth-child(1) {
+    left: 5%;
+    animation-duration: 9s;
+}
+
+.floating span:nth-child(2) {
+    left: 15%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.floating span:nth-child(3) {
+    left: 28%;
+    animation-duration: 10s;
+    animation-delay: 4s;
+}
+
+.floating span:nth-child(4) {
+    left: 42%;
+    animation-duration: 14s;
+    animation-delay: 1s;
+}
+
+.floating span:nth-child(5) {
+    left: 55%;
+    animation-duration: 11s;
+    animation-delay: 5s;
+}
+
+.floating span:nth-child(6) {
+    left: 68%;
+    animation-duration: 13s;
+    animation-delay: 3s;
+}
+
+.floating span:nth-child(7) {
+    left: 80%;
+    animation-duration: 10s;
+    animation-delay: 6s;
+}
+
+.floating span:nth-child(8) {
+    left: 92%;
+    animation-duration: 15s;
+    animation-delay: 2s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .30;
+    }
+
+    50% {
+        transform: translateY(-50vh) translateX(25px) rotate(15deg);
+    }
+
+    100% {
+        transform: translateY(-115vh) translateX(-30px) rotate(-15deg);
+        opacity: 0;
+    }
+}
+
+
+/* SOFT LIGHT */
+
+.light {
+    position: fixed;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.35);
+    filter: blur(10px);
+}
+
+.light.one {
+    top: -100px;
+    left: -100px;
+}
+
+.light.two {
+    right: -100px;
+    bottom: -100px;
+}
+
+
+/* MAIN CARD */
+
+.login-box {
+    position: relative;
+    z-index: 5;
+
+    width: 90%;
+    max-width: 430px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,.62);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,.55);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(100,70,80,.13),
+        inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+
+/* TOP DECORATION */
+
+.decor {
+    font-size: 24px;
+    letter-spacing: 7px;
+    margin-bottom: 18px;
+    opacity: .65;
+}
+
+
+/* TITLE */
+
+h1 {
+    margin: 0;
+    font-size: 31px;
+    font-weight: normal;
+    color: #76535d;
+    letter-spacing: .4px;
+}
+
+
+/* MESSAGE */
+
+.subtitle {
+    margin: 17px auto 30px;
+    max-width: 320px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #8b7078;
+}
+
+
+/* PASSWORD */
+
+input {
+    width: 100%;
+    padding: 16px;
+
+    border: 1px solid rgba(120,90,100,.16);
+    border-radius: 15px;
+
+    background: rgba(255,255,255,.65);
+
+    outline: none;
+
+    text-align: center;
+
+    font-size: 16px;
+    color: #604951;
+
+    transition: .3s;
+}
+
+input::placeholder {
+    color: #aa969d;
+}
+
+input:focus {
+    background: rgba(255,255,255,.9);
+    border-color: rgba(130,90,105,.3);
+    box-shadow: 0 0 0 4px rgba(190,140,155,.08);
+}
+
+
+/* BUTTON */
+
+button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 16px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #8b626e,
+        #ad7e8b
+    );
+
+    color: white;
+
+    font-family: Georgia, serif;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow: 0 9px 24px rgba(120,80,95,.18);
+
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 13px 28px rgba(120,80,95,.25);
+}
+
+button:active {
+    transform: scale(.98);
+}
+
+
+/* ERROR */
+
+#error {
+    display: none;
+    margin-top: 16px;
+    color: #a35f6d;
+    font-size: 14px;
+}
+
+
+/* BOTTOM */
+
+.bottom {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #aa9299;
+    letter-spacing: 1px;
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- FLOATING HEARTS & SPARKLES -->
+
+<div class="floating">
+    <span>♡</span>
+    <span>♥</span>
+    <span>✦</span>
+    <span>♡</span>
+    <span>✧</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>✦</span>
+</div>
+
+
+<!-- SOFT LIGHT -->
+
+<div class="light one"></div>
+<div class="light two"></div>
+
+
+<!-- LOGIN CARD -->
+
+<div class="login-box">
+
+    <div class="decor">
+        ♡ ✦ ♡
+    </div>
+
+    <h1>
+        A Little Surprise
+    </h1>
+
+    <div class="subtitle">
+        Something special has been
+        waiting here for you... 💕
+
+        <br>
+
+        Enter the secret password
+        to discover it.
+    </div>
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter secret password"
+    >
+
+    <button onclick="unlock()">
+        Unlock My Surprise ♡
+    </button>
+
+    <div id="error">
+        Hmm... that's not the magic word ✨
+        <br>
+        Try again.
+    </div>
+
+    <div class="bottom">
+        made with a little love ♡
+    </div>
+
+</div>
+
+
+<script>
+
+function unlock() {
+
+    const password =
+        document.getElementById("password").value;
+
+    if (password === "1234") {
+
+        window.location.href = "gift.html";
+
+    } else {
+
+        document.getElementById("error").style.display = "block";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
