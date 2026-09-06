@@ -1,1 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>A Special Gift 💝</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,220,230,.7), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(245,205,220,.7), transparent 30%),
+        linear-gradient(135deg, #fff9f7, #f8e9ed);
+    font-family: "Cormorant Garamond", serif;
+    color: #60434b;
+}
+
+/* FLOATING HEARTS */
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    font-size: 18px;
+    opacity: .45;
+    animation: floatHeart linear infinite;
+    pointer-events: none;
+}
+
+.h1 { left: 8%; animation-duration: 8s; }
+.h2 { left: 20%; animation-duration: 11s; animation-delay: 2s; }
+.h3 { left: 35%; animation-duration: 9s; animation-delay: 4s; }
+.h4 { left: 52%; animation-duration: 12s; animation-delay: 1s; }
+.h5 { left: 68%; animation-duration: 10s; animation-delay: 3s; }
+.h6 { left: 82%; animation-duration: 9s; animation-delay: 5s; }
+.h7 { left: 92%; animation-duration: 13s; animation-delay: 2s; }
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(.8);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .45;
+    }
+
+    50% {
+        transform: translateY(-50vh) translateX(25px)
+                   rotate(15deg) scale(1);
+    }
+
+    100% {
+        transform: translateY(-115vh) translateX(-30px)
+                   rotate(-15deg) scale(.7);
+        opacity: 0;
+    }
+}
+
+/* MAIN CARD */
+
+.card {
+    position: relative;
+    width: 90%;
+    max-width: 430px;
+    min-height: 570px;
+    padding: 45px 25px;
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.72);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,.9);
+
+    box-shadow:
+        0 20px 60px rgba(110,70,80,.18),
+        inset 0 0 30px rgba(255,255,255,.5);
+
+    text-align: center;
+    z-index: 5;
+}
+
+/* SMALL TOP TEXT */
+
+.top-text {
+    font-size: 17px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9b6b76;
+    margin-bottom: 12px;
+}
+
+/* TITLE */
+
+h1 {
+    margin: 0;
+    font-family: "Great Vibes", cursive;
+    font-size: 55px;
+    font-weight: 400;
+    color: #9b596c;
+}
+
+/* DECORATIVE LINE */
+
+.line {
+    width: 100px;
+    height: 1px;
+    margin: 18px auto 30px;
+    background: #c69a8a;
+    position: relative;
+}
+
+.line::before,
+.line::after {
+    content: "♡";
+    position: absolute;
+    top: -12px;
+    color: #c69a8a;
+    font-size: 17px;
+}
+
+.line::before {
+    left: -20px;
+}
+
+.line::after {
+    right: -20px;
+}
+
+/* GIFT AREA */
+
+.gift-area {
+    position: relative;
+    width: 220px;
+    height: 230px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+/* GLOW */
+
+.gift-glow {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: 20px;
+    top: 25px;
+    border-radius: 50%;
+    background: rgba(220,160,175,.25);
+    filter: blur(25px);
+    animation: glow 2.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%,100% {
+        transform: scale(.9);
+        opacity: .4;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: .8;
+    }
+}
+
+/* GIFT BOX */
+
+.gift {
+    position: absolute;
+    left: 35px;
+    top: 85px;
+    width: 150px;
+    height: 110px;
+    background: linear-gradient(135deg, #b85d75, #91465b);
+    border-radius: 5px;
+    box-shadow: 0 18px 25px rgba(100,50,60,.25);
+    transition: .6s ease;
+}
+
+/* RIBBON */
+
+.ribbon-v {
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    left: 63px;
+    top: 0;
+    background: #d8b074;
+}
+
+.ribbon-h {
+    position: absolute;
+    width: 100%;
+    height: 23px;
+    left: 0;
+    top: 43px;
+    background: #d8b074;
+}
+
+/* GIFT LID */
+
+.lid {
+    position: absolute;
+    width: 165px;
+    height: 38px;
+    left: -8px;
+    top: -25px;
+    background: linear-gradient(135deg, #c96a82, #9c4a60);
+    border-radius: 5px;
+    box-shadow: 0 7px 12px rgba(80,40,50,.2);
+    transition: .8s ease;
+    transform-origin: left bottom;
+}
+
+/* BOW */
+
+.bow-left,
+.bow-right {
+    position: absolute;
+    width: 48px;
+    height: 35px;
+    top: -43px;
+    background: #d8b074;
+    border-radius: 50% 50% 10% 50%;
+}
+
+.bow-left {
+    left: 42px;
+    transform: rotate(25deg);
+}
+
+.bow-right {
+    left: 70px;
+    transform: rotate(-25deg);
+}
+
+.bow-center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 60px;
+    top: -35px;
+    border-radius: 50%;
+    background: #c79a61;
+}
+
+/* SPARKLES */
+
+.sparkle {
+    position: absolute;
+    color: #d2a45f;
+    font-size: 22px;
+    animation: sparkle 1.8s ease-in-out infinite;
+}
+
+.s1 { left: 10px; top: 55px; }
+.s2 { right: 5px; top: 70px; animation-delay: .5s; }
+.s3 { left: 25px; top: 170px; animation-delay: 1s; }
+.s4 { right: 25px; top: 165px; animation-delay: 1.4s; }
+
+@keyframes sparkle {
+    0%,100% {
+        opacity: .2;
+        transform: scale(.7) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(20deg);
+    }
+}
+
+/* OPEN BUTTON */
+
+.open-text {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #805462;
+    letter-spacing: 1px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: .5;
+    }
+}
+
+/* NOTE */
+
+.note {
+    display: none;
+    animation: noteAppear 1.5s ease forwards;
+}
+
+.note.show {
+    display: block;
+}
+
+@keyframes noteAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.note-title {
+    font-family: "Great Vibes", cursive;
+    font-size: 42px;
+    color: #9b596c;
+    margin-bottom: 15px;
+}
+
+.note p {
+    font-size: 21px;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+.signature {
+    margin-top: 20px;
+    font-family: "Great Vibes", cursive;
+    font-size: 32px;
+    color: #9b596c;
+}
+
+/* OPEN ANIMATION */
+
+.gift-area.opened .lid {
+    transform: translateY(-70px) rotate(-8deg);
+    opacity: 0;
+}
+
+.gift-area.opened .bow-left,
+.gift-area.opened .bow-right,
+.gift-area.opened .bow-center {
+    opacity: 0;
+    transform: translateY(-70px);
+}
+
+.gift-area.opened .gift {
+    transform: scale(.9);
+    opacity: 0;
+}
+
+.gift-area.opened .sparkle {
+    animation: explode .8s ease forwards;
+}
+
+@keyframes explode {
+    to {
+        transform: scale(2) translateY(-40px);
+        opacity: 0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING HEARTS -->
+
+<div class="heart h1">♡</div>
+<div class="heart h2">♥</div>
+<div class="heart h3">♡</div>
+<div class="heart h4">♥</div>
+<div class="heart h5">♡</div>
+<div class="heart h6">♥</div>
+<div class="heart h7">♡</div>
+
+
+<!-- MAIN CARD -->
+
+<div class="card">
+
+    <div class="top-text">A little surprise for you</div>
+
+    <h1>Just For You</h1>
+
+    <div class="line"></div>
+
+
+    <!-- GIFT -->
+
+    <div class="gift-area" id="gift" onclick="openGift()">
+
+        <div class="gift-glow"></div>
+
+        <div class="sparkle s1">✦</div>
+        <div class="sparkle s2">✧</div>
+        <div class="sparkle s3">✦</div>
+        <div class="sparkle s4">✧</div>
+
+        <div class="gift">
+
+            <div class="lid"></div>
+
+            <div class="ribbon-v"></div>
+            <div class="ribbon-h"></div>
+
+            <div class="bow-left"></div>
+            <div class="bow-right"></div>
+            <div class="bow-center"></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="open-text" id="openText">
+        Tap the gift to open ✨
+    </div>
+
+
+    <!-- HIDDEN NOTE -->
+
+    <div class="note" id="note">
+
+        <div class="note-title">
+            A Little Note
+        </div>
+
+        <p>
+            Some surprises are wrapped in boxes...
+        </p>
+
+        <p>
+            But the sweetest ones are wrapped
+            in love, memories and smiles. 💗
+        </p>
+
+        <p>
+            This little gift is just the beginning
+            of something beautiful.
+        </p>
+
+        <div class="signature">
+            With love ♡
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openGift() {
+
+    const gift = document.getElementById("gift");
+    const note = document.getElementById("note");
+    const text = document.getElementById("openText");
+
+    if (gift.classList.contains("opened")) {
+        return;
+    }
+
+    gift.classList.add("opened");
+
+    text.style.display = "none";
+
+    setTimeout(function() {
+        note.classList.add("show");
+    }, 900);
+
+}
+
+</script>
+
+</body>
+  </html>
