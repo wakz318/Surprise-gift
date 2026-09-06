@@ -1,492 +1,1104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A Special Gift 💝</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<title>For My Sister 💗</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap"
+rel="stylesheet">
+
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
 
 * {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
-    overflow: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     background:
-        radial-gradient(circle at 20% 20%, rgba(255,220,230,.7), transparent 30%),
-        radial-gradient(circle at 80% 80%, rgba(245,205,220,.7), transparent 30%),
-        linear-gradient(135deg, #fff9f7, #f8e9ed);
-    font-family: "Cormorant Garamond", serif;
-    color: #60434b;
+        radial-gradient(circle at 20% 10%,
+        rgba(255, 205, 220, .55),
+        transparent 30%),
+
+        radial-gradient(circle at 80% 90%,
+        rgba(244, 190, 210, .5),
+        transparent 30%),
+
+        linear-gradient(135deg,
+        #fff9fa,
+        #fdecef,
+        #fffafa);
+
+    color: #624653;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    overflow-x: hidden;
 }
 
-/* FLOATING HEARTS */
 
-.heart {
+/* =========================
+   FLOATING SPARKLES
+========================= */
+
+.sparkle {
     position: fixed;
-    bottom: -40px;
+
+    color: #c58a9d;
+
     font-size: 18px;
+
     opacity: .45;
-    animation: floatHeart linear infinite;
+
     pointer-events: none;
+
+    animation:
+        sparkleFloat 7s linear infinite;
+
+    z-index: 0;
 }
 
-.h1 { left: 8%; animation-duration: 8s; }
-.h2 { left: 20%; animation-duration: 11s; animation-delay: 2s; }
-.h3 { left: 35%; animation-duration: 9s; animation-delay: 4s; }
-.h4 { left: 52%; animation-duration: 12s; animation-delay: 1s; }
-.h5 { left: 68%; animation-duration: 10s; animation-delay: 3s; }
-.h6 { left: 82%; animation-duration: 9s; animation-delay: 5s; }
-.h7 { left: 92%; animation-duration: 13s; animation-delay: 2s; }
+.sparkle:nth-child(1) {
+    left: 8%;
+    animation-delay: 0s;
+}
 
-@keyframes floatHeart {
+.sparkle:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.sparkle:nth-child(3) {
+    left: 48%;
+    animation-delay: 4s;
+}
+
+.sparkle:nth-child(4) {
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.sparkle:nth-child(5) {
+    left: 90%;
+    animation-delay: 3s;
+}
+
+@keyframes sparkleFloat {
+
     0% {
-        transform: translateY(0) rotate(0deg) scale(.8);
+        top: 105%;
+        transform:
+            translateX(0)
+            rotate(0deg);
         opacity: 0;
     }
 
-    15% {
-        opacity: .45;
+    20% {
+        opacity: .5;
     }
 
-    50% {
-        transform: translateY(-50vh) translateX(25px)
-                   rotate(15deg) scale(1);
-    }
-
-    100% {
-        transform: translateY(-115vh) translateX(-30px)
-                   rotate(-15deg) scale(.7);
-        opacity: 0;
-    }
-}
-
-/* MAIN CARD */
-
-.card {
-    position: relative;
-    width: 90%;
-    max-width: 430px;
-    min-height: 570px;
-    padding: 45px 25px;
-    border-radius: 30px;
-
-    background: rgba(255,255,255,.72);
-    backdrop-filter: blur(10px);
-
-    border: 1px solid rgba(255,255,255,.9);
-
-    box-shadow:
-        0 20px 60px rgba(110,70,80,.18),
-        inset 0 0 30px rgba(255,255,255,.5);
-
-    text-align: center;
-    z-index: 5;
-}
-
-/* SMALL TOP TEXT */
-
-.top-text {
-    font-size: 17px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #9b6b76;
-    margin-bottom: 12px;
-}
-
-/* TITLE */
-
-h1 {
-    margin: 0;
-    font-family: "Great Vibes", cursive;
-    font-size: 55px;
-    font-weight: 400;
-    color: #9b596c;
-}
-
-/* DECORATIVE LINE */
-
-.line {
-    width: 100px;
-    height: 1px;
-    margin: 18px auto 30px;
-    background: #c69a8a;
-    position: relative;
-}
-
-.line::before,
-.line::after {
-    content: "♡";
-    position: absolute;
-    top: -12px;
-    color: #c69a8a;
-    font-size: 17px;
-}
-
-.line::before {
-    left: -20px;
-}
-
-.line::after {
-    right: -20px;
-}
-
-/* GIFT AREA */
-
-.gift-area {
-    position: relative;
-    width: 220px;
-    height: 230px;
-    margin: 10px auto;
-    cursor: pointer;
-}
-
-/* GLOW */
-
-.gift-glow {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    left: 20px;
-    top: 25px;
-    border-radius: 50%;
-    background: rgba(220,160,175,.25);
-    filter: blur(25px);
-    animation: glow 2.5s ease-in-out infinite;
-}
-
-@keyframes glow {
-    0%,100% {
-        transform: scale(.9);
+    80% {
         opacity: .4;
     }
 
-    50% {
-        transform: scale(1.15);
-        opacity: .8;
-    }
-}
-
-/* GIFT BOX */
-
-.gift {
-    position: absolute;
-    left: 35px;
-    top: 85px;
-    width: 150px;
-    height: 110px;
-    background: linear-gradient(135deg, #b85d75, #91465b);
-    border-radius: 5px;
-    box-shadow: 0 18px 25px rgba(100,50,60,.25);
-    transition: .6s ease;
-}
-
-/* RIBBON */
-
-.ribbon-v {
-    position: absolute;
-    width: 25px;
-    height: 100%;
-    left: 63px;
-    top: 0;
-    background: #d8b074;
-}
-
-.ribbon-h {
-    position: absolute;
-    width: 100%;
-    height: 23px;
-    left: 0;
-    top: 43px;
-    background: #d8b074;
-}
-
-/* GIFT LID */
-
-.lid {
-    position: absolute;
-    width: 165px;
-    height: 38px;
-    left: -8px;
-    top: -25px;
-    background: linear-gradient(135deg, #c96a82, #9c4a60);
-    border-radius: 5px;
-    box-shadow: 0 7px 12px rgba(80,40,50,.2);
-    transition: .8s ease;
-    transform-origin: left bottom;
-}
-
-/* BOW */
-
-.bow-left,
-.bow-right {
-    position: absolute;
-    width: 48px;
-    height: 35px;
-    top: -43px;
-    background: #d8b074;
-    border-radius: 50% 50% 10% 50%;
-}
-
-.bow-left {
-    left: 42px;
-    transform: rotate(25deg);
-}
-
-.bow-right {
-    left: 70px;
-    transform: rotate(-25deg);
-}
-
-.bow-center {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 60px;
-    top: -35px;
-    border-radius: 50%;
-    background: #c79a61;
-}
-
-/* SPARKLES */
-
-.sparkle {
-    position: absolute;
-    color: #d2a45f;
-    font-size: 22px;
-    animation: sparkle 1.8s ease-in-out infinite;
-}
-
-.s1 { left: 10px; top: 55px; }
-.s2 { right: 5px; top: 70px; animation-delay: .5s; }
-.s3 { left: 25px; top: 170px; animation-delay: 1s; }
-.s4 { right: 25px; top: 165px; animation-delay: 1.4s; }
-
-@keyframes sparkle {
-    0%,100% {
-        opacity: .2;
-        transform: scale(.7) rotate(0deg);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.3) rotate(20deg);
-    }
-}
-
-/* OPEN BUTTON */
-
-.open-text {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #805462;
-    letter-spacing: 1px;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    50% {
-        opacity: .5;
-    }
-}
-
-/* NOTE */
-
-.note {
-    display: none;
-    animation: noteAppear 1.5s ease forwards;
-}
-
-.note.show {
-    display: block;
-}
-
-@keyframes noteAppear {
-    from {
+    100% {
+        top: -10%;
+        transform:
+            translateX(35px)
+            rotate(180deg);
         opacity: 0;
-        transform: translateY(30px) scale(.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
     }
 }
 
-.note-title {
-    font-family: "Great Vibes", cursive;
-    font-size: 42px;
-    color: #9b596c;
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.page {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(94%, 650px);
+
+    margin: 30px auto 60px;
+
+    padding: 35px 22px 55px;
+
+    background:
+        rgba(255,255,255,.72);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 20px 70px
+        rgba(146, 82, 105, .14);
+
+    border:
+        1px solid
+        rgba(190, 126, 150, .15);
+}
+
+
+/* =========================
+   TOP DECORATION
+========================= */
+
+.top-decoration {
+    text-align: center;
+
+    color: #b97991;
+
+    font-size: 24px;
+
+    letter-spacing: 10px;
+
     margin-bottom: 15px;
 }
 
-.note p {
+
+/* =========================
+   TITLES
+========================= */
+
+.small-title {
+
+    text-align: center;
+
+    font-size: 17px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: #98717d;
+
+    margin-top: 15px;
+
+    animation: fadeUp 1.2s ease;
+}
+
+.main-title {
+
+    text-align: center;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: clamp(55px, 14vw, 90px);
+
+    font-weight: 400;
+
+    color: #a65372;
+
+    line-height: 1;
+
+    margin: 12px 0 5px;
+
+    animation:
+        titleAppear 1.5s ease;
+}
+
+.name {
+
+    text-align: center;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 42px;
+
+    color: #b76a87;
+
+    margin: 5px 0 22px;
+
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 20px 0 35px;
+
+    color: #c18498;
+}
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    width: 90px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #c995a5
+        );
+}
+
+.divider::after {
+
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            #c995a5
+        );
+}
+
+
+/* =========================
+   INTRO MESSAGE
+========================= */
+
+.intro {
+
+    text-align: center;
+
     font-size: 21px;
-    line-height: 1.6;
-    margin: 8px 0;
+
+    line-height: 1.65;
+
+    color: #6e515d;
+
+    margin: 0 auto 40px;
+
+    max-width: 530px;
+}
+
+.intro strong {
+
+    color: #a65372;
+
+}
+
+
+/* =========================
+   PHOTO SECTION
+========================= */
+
+.photo-title {
+
+    text-align: center;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 48px;
+
+    font-weight: 400;
+
+    color: #a65372;
+
+    margin-bottom: 25px;
+}
+
+.photos {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 25px 18px;
+
+    padding: 5px;
+
+}
+
+
+/* =========================
+   PHOTO FRAME
+========================= */
+
+.photo-card {
+
+    position: relative;
+
+    padding: 9px;
+
+    background:
+        rgba(255,255,255,.9);
+
+    box-shadow:
+        0 12px 30px
+        rgba(130, 70, 90, .16);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+
+    animation:
+        photoAppear 1s ease both;
+}
+
+.photo-card:hover {
+
+    transform:
+        translateY(-7px)
+        rotate(0deg);
+
+    box-shadow:
+        0 18px 40px
+        rgba(130, 70, 90, .23);
+}
+
+
+/* First shape */
+
+.photo-card:nth-child(1) {
+
+    border-radius:
+        45% 55% 48% 52% /
+        52% 45% 55% 48%;
+
+    transform: rotate(-3deg);
+}
+
+.photo-card:nth-child(1):hover {
+    transform:
+        translateY(-7px)
+        rotate(-1deg);
+}
+
+
+/* Second shape */
+
+.photo-card:nth-child(2) {
+
+    border-radius:
+        55% 45% 52% 48% /
+        45% 55% 48% 52%;
+
+    transform: rotate(3deg);
+}
+
+.photo-card:nth-child(2):hover {
+    transform:
+        translateY(-7px)
+        rotate(1deg);
+}
+
+
+/* Third shape */
+
+.photo-card:nth-child(3) {
+
+    border-radius:
+        48% 52% 55% 45% /
+        55% 48% 52% 45%;
+
+    transform: rotate(2deg);
+}
+
+.photo-card:nth-child(3):hover {
+    transform:
+        translateY(-7px)
+        rotate(1deg);
+}
+
+
+/* Fourth shape */
+
+.photo-card:nth-child(4) {
+
+    border-radius:
+        52% 48% 45% 55% /
+        48% 55% 45% 52%;
+
+    transform: rotate(-3deg);
+}
+
+.photo-card:nth-child(4):hover {
+    transform:
+        translateY(-7px)
+        rotate(-1deg);
+}
+
+
+.photo-card img {
+
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1.08;
+
+    object-fit: cover;
+
+    border-radius:
+        inherit;
+}
+
+
+/* =========================
+   LITTLE FLOWERS
+========================= */
+
+.flower {
+
+    position: absolute;
+
+    font-size: 23px;
+
+    color: #c47891;
+
+    z-index: 5;
+
+    filter:
+        drop-shadow(
+            0 2px 3px
+            rgba(100,50,70,.12)
+        );
+}
+
+.flower.one {
+    top: -12px;
+    left: 10px;
+}
+
+.flower.two {
+    bottom: -10px;
+    right: 10px;
+}
+
+.flower.three {
+    top: -10px;
+    right: 8px;
+}
+
+.flower.four {
+    bottom: -10px;
+    left: 10px;
+}
+
+
+/* =========================
+   SISTER MESSAGE
+========================= */
+
+.message-box {
+
+    margin-top: 55px;
+
+    padding: 35px 22px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,244,247,.95),
+            rgba(255,250,251,.85)
+        );
+
+    border-radius: 30px;
+
+    border:
+        1px solid
+        rgba(181,111,136,.18);
+
+    box-shadow:
+        inset 0 0 35px
+        rgba(207,142,163,.08);
+}
+
+.message-title {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 50px;
+
+    color: #a65372;
+
+    margin: 0 0 20px;
+}
+
+.message-box p {
+
+    font-size: 20px;
+
+    line-height: 1.75;
+
+    margin: 15px auto;
+
+    max-width: 510px;
+}
+
+.highlight {
+
+    color: #a65372;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   SPECIAL QUOTE
+========================= */
+
+.quote {
+
+    margin: 45px 10px 20px;
+
+    text-align: center;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 34px;
+
+    line-height: 1.4;
+
+    color: #a65372;
+}
+
+.quote span {
+
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 17px;
+
+    letter-spacing: 3px;
+
+    margin-top: 10px;
+
+    color: #9b7782;
+}
+
+
+/* =========================
+   FINAL SECTION
+========================= */
+
+.final {
+
+    text-align: center;
+
+    margin-top: 50px;
+
+    padding-top: 35px;
+
+    border-top:
+        1px solid
+        rgba(180,120,140,.18);
+}
+
+.final-heart {
+
+    font-size: 32px;
+
+    animation:
+        heartbeat 1.8s infinite;
+}
+
+.final p {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 38px;
+
+    color: #a65372;
+
+    margin: 12px 0;
 }
 
 .signature {
-    margin-top: 20px;
-    font-family: "Great Vibes", cursive;
-    font-size: 32px;
-    color: #9b596c;
+
+    font-size: 18px;
+
+    letter-spacing: 3px;
+
+    color: #98717d;
 }
 
-/* OPEN ANIMATION */
 
-.gift-area.opened .lid {
-    transform: translateY(-70px) rotate(-8deg);
-    opacity: 0;
-}
+/* =========================
+   ANIMATIONS
+========================= */
 
-.gift-area.opened .bow-left,
-.gift-area.opened .bow-right,
-.gift-area.opened .bow-center {
-    opacity: 0;
-    transform: translateY(-70px);
-}
+@keyframes titleAppear {
 
-.gift-area.opened .gift {
-    transform: scale(.9);
-    opacity: 0;
-}
-
-.gift-area.opened .sparkle {
-    animation: explode .8s ease forwards;
-}
-
-@keyframes explode {
-    to {
-        transform: scale(2) translateY(-40px);
+    from {
         opacity: 0;
+        transform:
+            translateY(25px)
+            scale(.92);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes photoAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(.9);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .page {
+        width: 94%;
+
+        margin:
+            15px auto 40px;
+
+        padding:
+            28px 15px 45px;
+
+        border-radius: 30px;
+    }
+
+    .small-title {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .main-title {
+        font-size: 58px;
+    }
+
+    .name {
+        font-size: 38px;
+    }
+
+    .intro {
+        font-size: 18px;
+    }
+
+    .photos {
+        gap: 18px 12px;
+    }
+
+    .message-title {
+        font-size: 43px;
+    }
+
+    .message-box p {
+        font-size: 18px;
+        line-height: 1.65;
+    }
+
+    .quote {
+        font-size: 29px;
+    }
+
+    .final p {
+        font-size: 32px;
     }
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- FLOATING HEARTS -->
 
-<div class="heart h1">♡</div>
-<div class="heart h2">♥</div>
-<div class="heart h3">♡</div>
-<div class="heart h4">♥</div>
-<div class="heart h5">♡</div>
-<div class="heart h6">♥</div>
-<div class="heart h7">♡</div>
+<!-- FLOATING SPARKLES -->
 
-
-<!-- MAIN CARD -->
-
-<div class="card">
-
-    <div class="top-text">A little surprise for you</div>
-
-    <h1>Just For You</h1>
-
-    <div class="line"></div>
+<div class="sparkle">✦</div>
+<div class="sparkle">♡</div>
+<div class="sparkle">✧</div>
+<div class="sparkle">♡</div>
+<div class="sparkle">✦</div>
 
 
-    <!-- GIFT -->
+<main class="page">
 
-    <div class="gift-area" id="gift" onclick="openGift()">
 
-        <div class="gift-glow"></div>
+<!-- TOP -->
 
-        <div class="sparkle s1">✦</div>
-        <div class="sparkle s2">✧</div>
-        <div class="sparkle s3">✦</div>
-        <div class="sparkle s4">✧</div>
+<div class="top-decoration">
+    ✿　♡　✿
+</div>
 
-        <div class="gift">
 
-            <div class="lid"></div>
+<div class="small-title">
+    A little something
+    from my heart
+</div>
 
-            <div class="ribbon-v"></div>
-            <div class="ribbon-h"></div>
 
-            <div class="bow-left"></div>
-            <div class="bow-right"></div>
-            <div class="bow-center"></div>
+<h1 class="main-title">
+    For My Sister
+</h1>
 
-        </div>
 
+<div class="name">
+    Fathimathul Vahiba
+</div>
+
+
+<div class="divider">
+    ♡
+</div>
+
+
+<!-- INTRO -->
+
+<p class="intro">
+
+Some people come into our lives
+and make them brighter.
+
+But a sister...
+
+<strong>
+makes life more beautiful
+just by being there.
+</strong>
+
+</p>
+
+
+<!-- PHOTOS -->
+
+<h2 class="photo-title">
+    Our Little Memories
+</h2>
+
+
+<div class="photos">
+
+
+<!-- PHOTO 1 -->
+
+<div class="photo-card">
+
+    <div class="flower one">
+        ✿
     </div>
 
-
-    <div class="open-text" id="openText">
-        Tap the gift to open ✨
-    </div>
-
-
-    <!-- HIDDEN NOTE -->
-
-    <div class="note" id="note">
-
-        <div class="note-title">
-            A Little Note
-        </div>
-
-        <p>
-            Some surprises are wrapped in boxes...
-        </p>
-
-        <p>
-            But the sweetest ones are wrapped
-            in love, memories and smiles. 💗
-        </p>
-
-        <p>
-            This little gift is just the beginning
-            of something beautiful.
-        </p>
-
-        <div class="signature">
-            With love ♡
-        </div>
-
-    </div>
+    <img src="sister1.jpg"
+         alt="Memory 1">
 
 </div>
 
 
+<!-- PHOTO 2 -->
+
+<div class="photo-card">
+
+    <div class="flower two">
+        ❀
+    </div>
+
+    <img src="sister2.jpg"
+         alt="Memory 2">
+
+</div>
+
+
+<!-- PHOTO 3 -->
+
+<div class="photo-card">
+
+    <div class="flower three">
+        ✿
+    </div>
+
+    <img src="sister3.jpg"
+         alt="Memory 3">
+
+</div>
+
+
+<!-- PHOTO 4 -->
+
+<div class="photo-card">
+
+    <div class="flower four">
+        ❀
+    </div>
+
+    <img src="sister4.jpg"
+         alt="Memory 4">
+
+</div>
+
+
+</div>
+
+
+<!-- MESSAGE -->
+
+<section class="message-box">
+
+<h2 class="message-title">
+    Dear Vahiba...
+</h2>
+
+
+<p>
+You are not just my sister.
+</p>
+
+
+<p>
+
+You are one of those beautiful
+parts of my life that I can never
+replace.
+
+</p>
+
+
+<p>
+
+Through all the little arguments,
+the silly moments, the laughter,
+the memories and everything
+in between...
+
+</p>
+
+
+<p>
+
+I will always be grateful that
+Allah blessed me with a sister
+like <span class="highlight">
+you.
+</span>
+
+</p>
+
+
+<p>
+
+No matter how much life changes,
+I hope you always know that
+you have a special place in my
+heart.
+
+</p>
+
+
+<p>
+
+And whenever you look back at
+these memories, I hope they
+remind you of how deeply you
+are loved. 💗
+
+</p>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<div class="quote">
+
+A sister is a little bit of
+childhood that can never be lost. 💕
+
+<span>
+AND YOU WILL ALWAYS BE
+MY LITTLE PIECE OF HOME.
+</span>
+
+</div>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+<div class="final-heart">
+    ❤️
+</div>
+
+<p>
+With all my love,
+always.
+</p>
+
+<div class="signature">
+    FOR MY DEAR SISTER
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- MUSIC -->
+
+<audio id="bgMusic"
+       loop
+       preload="auto">
+
+    <source src="sister-music.mp3"
+            type="audio/mpeg">
+
+</audio>
+
+
 <script>
 
-function openGift() {
+/* =========================
+   START MUSIC ON FIRST TOUCH
+========================= */
 
-    const gift = document.getElementById("gift");
-    const note = document.getElementById("note");
-    const text = document.getElementById("openText");
+const music =
+    document.getElementById("bgMusic");
 
-    if (gift.classList.contains("opened")) {
-        return;
-    }
+let musicStarted = false;
 
-    gift.classList.add("opened");
 
-    text.style.display = "none";
+function startMusic() {
 
-    setTimeout(function() {
-        note.classList.add("show");
-    }, 900);
+    if (musicStarted) return;
+
+    musicStarted = true;
+
+    music.volume = 0.55;
+
+    music.play()
+        .catch(() => {
+            musicStarted = false;
+        });
 
 }
 
+
+/* Mobile touch */
+
+document.addEventListener(
+    "touchstart",
+    startMusic,
+    { once: true }
+);
+
+
+/* Desktop click */
+
+document.addEventListener(
+    "click",
+    startMusic,
+    { once: true }
+);
+
+
+/* First interaction with keyboard */
+
+document.addEventListener(
+    "keydown",
+    startMusic,
+    { once: true }
+);
+
 </script>
 
+
 </body>
-  </html>
+
+</html>
+
+
+
+
+
+
