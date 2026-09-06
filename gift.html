@@ -1,4 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise 🎁</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 20% 20%, #fff5f8, transparent 35%),
+        radial-gradient(circle at 80% 80%, #ffe1eb, transparent 40%),
+        linear-gradient(135deg, #fff8fa, #fbdce7);
+    font-family: "Cormorant Garamond", serif;
+    color: #704654;
+    position: relative;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    color: #e9a8ba;
+    opacity: 0.45;
+    font-size: 20px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.h1 { left: 10%; top: 15%; animation-delay: 0s; }
+.h2 { left: 82%; top: 18%; animation-delay: 1.5s; }
+.h3 { left: 18%; bottom: 15%; animation-delay: 3s; }
+.h4 { right: 12%; bottom: 20%; animation-delay: 4s; }
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(8deg);
+    }
+}
+
+/* Main box */
+.container {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.small-text {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0 0 25px;
+    color: #a95f78;
+}
+
+.message {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Gift */
+.gift-area {
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.gift-area:hover {
+    transform: scale(1.05);
+}
+
+.gift {
+    width: 150px;
+    height: 125px;
+    position: relative;
+    margin: 25px auto 15px;
+}
+
+/* Gift body */
+.gift-body {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    width: 140px;
+    height: 95px;
+    background: linear-gradient(135deg, #d77c98, #b95778);
+    border-radius: 8px;
+    box-shadow: 0 12px 25px rgba(130, 65, 85, 0.22);
+}
+
+/* Vertical ribbon */
+.gift-body::before {
+    content: "";
+    position: absolute;
+    left: 57px;
+    top: 0;
+    width: 26px;
+    height: 95px;
+    background: #f6d29b;
+}
+
+/* Gift lid */
+.lid {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 150px;
+    height: 35px;
+    background: linear-gradient(135deg, #e18da7, #c56382);
+    border-radius: 7px;
+    box-shadow: 0 5px 10px rgba(130, 65, 85, 0.18);
+    z-index: 2;
+}
+
+.lid::before {
+    content: "";
+    position: absolute;
+    left: 62px;
+    top: 0;
+    width: 26px;
+    height: 35px;
+    background: #f6d29b;
+}
+
+/* Bow */
+.bow-left,
+.bow-right {
+    position: absolute;
+    top: -18px;
+    width: 42px;
+    height: 30px;
+    background: #f6d29b;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.bow-left {
+    left: 42px;
+    transform: rotate(-25deg);
+}
+
+.bow-right {
+    right: 42px;
+    transform: rotate(25deg);
+}
+
+.bow-center {
+    position: absolute;
+    top: -10px;
+    left: 67px;
+    width: 18px;
+    height: 20px;
+    background: #e7bd7d;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.instruction {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #966172;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.65;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Small decoration */
+.sparkle {
+    position: absolute;
+    color: #d6a05b;
+    font-size: 18px;
+}
+
+.s1 { top: 30%; left: 25%; }
+.s2 { top: 35%; right: 23%; }
+.s3 { bottom: 30%; left: 28%; }
+.s4 { bottom: 32%; right: 27%; }
+
+.note {
+    margin-top: 25px;
+    font-size: 16px;
+    opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="heart h1">♡</div>
+<div class="heart h2">♡</div>
+<div class="heart h3">♡</div>
+<div class="heart h4">♡</div>
+
+<div class="sparkle s1">✦</div>
+<div class="sparkle s2">✧</div>
+<div class="sparkle s3">✧</div>
+<div class="sparkle s4">✦</div>
+
+<div class="container">
+
+    <div class="small-text">Something special is waiting...</div>
+
+    <h1>For You ♡</h1>
+
+    <div class="message">
+        I have a little surprise waiting for you.
+        <br>
+        Take a moment and open it... 🎀
+    </div>
+
+    <div class="gift-area" onclick="openGift()">
+
+        <div class="gift">
+
+            <div class="bow-left"></div>
+            <div class="bow-right"></div>
+            <div class="bow-center"></div>
+
+            <div class="lid"></div>
+            <div class="gift-body"></div>
+
+        </div>
+
+        <div class="instruction">
+            Tap the gift to open it ♡
+        </div>
+
+    </div>
+
+    <div class="note">
+        Made with a little love 💗
+    </div>
+
+</div>
+
+<script>
+function openGift() {
+
+    document.querySelector(".gift-area").style.transform = "scale(1.15)";
+
+    setTimeout(function() {
+        window.location.href = "sister.html";
+    }, 500);
+}
+</script>
+
+</body>
+  </html>
 
 
 
