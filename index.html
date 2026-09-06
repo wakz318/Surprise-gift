@@ -3,9 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>A Little Surprise 💕</title>
 
+<!-- BEAUTIFUL FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -14,366 +22,624 @@ body {
     margin: 0;
     min-height: 100vh;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Georgia, "Times New Roman", serif;
+
+    font-family: "Playfair Display", serif;
 
     background:
-        radial-gradient(circle at 15% 20%, rgba(255, 190, 205, .35), transparent 30%),
-        radial-gradient(circle at 85% 80%, rgba(220, 185, 205, .30), transparent 30%),
-        linear-gradient(135deg, #fff8f4, #f8e9ed);
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.8), transparent 28%),
+        radial-gradient(circle at 80% 80%, rgba(255,190,210,0.35), transparent 30%),
+        linear-gradient(135deg, #fff7f8, #fbe8ed, #fffaf5);
 
-    color: #654d55;
+    color: #684a54;
 }
 
 
-/* FLOATING DECORATIONS */
+/* =========================
+   FLOATING DECORATIONS
+========================= */
 
-.floating {
+.decorations {
     position: fixed;
     inset: 0;
-    overflow: hidden;
     pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
 }
 
-.floating span {
+.float {
     position: absolute;
-    bottom: -50px;
-    font-size: 20px;
-    opacity: .30;
+    opacity: 0;
     animation: floatUp linear infinite;
 }
 
-.floating span:nth-child(1) {
+.heart {
+    font-size: 20px;
+}
+
+.star {
+    font-size: 15px;
+}
+
+.flower {
+    font-size: 18px;
+}
+
+.sparkle {
+    font-size: 13px;
+}
+
+.float:nth-child(1) {
     left: 5%;
-    animation-duration: 9s;
-}
-
-.floating span:nth-child(2) {
-    left: 15%;
-    animation-duration: 12s;
-    animation-delay: 2s;
-}
-
-.floating span:nth-child(3) {
-    left: 28%;
     animation-duration: 10s;
-    animation-delay: 4s;
+    animation-delay: 0s;
 }
 
-.floating span:nth-child(4) {
-    left: 42%;
-    animation-duration: 14s;
-    animation-delay: 1s;
-}
-
-.floating span:nth-child(5) {
-    left: 55%;
-    animation-duration: 11s;
-    animation-delay: 5s;
-}
-
-.floating span:nth-child(6) {
-    left: 68%;
+.float:nth-child(2) {
+    left: 17%;
     animation-duration: 13s;
     animation-delay: 3s;
 }
 
-.floating span:nth-child(7) {
-    left: 80%;
-    animation-duration: 10s;
-    animation-delay: 6s;
+.float:nth-child(3) {
+    left: 30%;
+    animation-duration: 9s;
+    animation-delay: 1s;
 }
 
-.floating span:nth-child(8) {
-    left: 92%;
-    animation-duration: 15s;
+.float:nth-child(4) {
+    left: 44%;
+    animation-duration: 14s;
+    animation-delay: 5s;
+}
+
+.float:nth-child(5) {
+    left: 58%;
+    animation-duration: 11s;
     animation-delay: 2s;
 }
 
+.float:nth-child(6) {
+    left: 72%;
+    animation-duration: 12s;
+    animation-delay: 4s;
+}
+
+.float:nth-child(7) {
+    left: 86%;
+    animation-duration: 10s;
+    animation-delay: 1s;
+}
+
+.float:nth-child(8) {
+    left: 94%;
+    animation-duration: 15s;
+    animation-delay: 6s;
+}
+
+.float:nth-child(9) {
+    left: 25%;
+    animation-duration: 12s;
+    animation-delay: 7s;
+}
+
+.float:nth-child(10) {
+    left: 65%;
+    animation-duration: 9s;
+    animation-delay: 5s;
+}
+
 @keyframes floatUp {
+
     0% {
-        transform: translateY(0) translateX(0) rotate(0deg);
+        bottom: -10%;
+        transform: translateX(0) rotate(0deg);
         opacity: 0;
     }
 
     15% {
-        opacity: .30;
+        opacity: 0.55;
     }
 
     50% {
-        transform: translateY(-50vh) translateX(25px) rotate(15deg);
+        transform: translateX(30px) rotate(15deg);
+        opacity: 0.7;
+    }
+
+    80% {
+        opacity: 0.45;
     }
 
     100% {
-        transform: translateY(-115vh) translateX(-30px) rotate(-15deg);
+        bottom: 110%;
+        transform: translateX(-30px) rotate(-20deg);
         opacity: 0;
     }
 }
 
 
-/* SOFT LIGHT */
+/* =========================
+   SOFT GLOW
+========================= */
 
-.light {
+.glow {
     position: fixed;
     width: 260px;
     height: 260px;
     border-radius: 50%;
-    background: rgba(255,255,255,.35);
-    filter: blur(10px);
+
+    background: rgba(255, 180, 200, 0.18);
+
+    filter: blur(50px);
+
+    top: -80px;
+    left: -80px;
+
+    pointer-events: none;
 }
 
-.light.one {
-    top: -100px;
-    left: -100px;
-}
+.glow2 {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
 
-.light.two {
+    background: rgba(255, 215, 180, 0.18);
+
+    filter: blur(60px);
+
     right: -100px;
     bottom: -100px;
+
+    pointer-events: none;
 }
 
 
-/* MAIN CARD */
+/* =========================
+   MAIN LOGIN AREA
+========================= */
 
-.login-box {
+.page {
     position: relative;
     z-index: 5;
 
-    width: 90%;
-    max-width: 430px;
+    min-height: 100vh;
 
-    padding: 45px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-box {
+
+    width: 100%;
+    max-width: 430px;
 
     text-align: center;
 
-    background: rgba(255,255,255,.62);
+    padding: 48px 30px 42px;
+
+    background: rgba(255,255,255,0.62);
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
-    border: 1px solid rgba(255,255,255,.55);
+    border: 1px solid rgba(255,255,255,0.75);
 
-    border-radius: 30px;
+    border-radius: 32px;
 
     box-shadow:
-        0 20px 60px rgba(100,70,80,.13),
-        inset 0 1px 0 rgba(255,255,255,.8);
+        0 20px 60px rgba(110,70,80,0.12);
+
+    animation: appear 1.3s ease;
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 
-/* TOP DECORATION */
+/* =========================
+   TOP DECORATION
+========================= */
 
-.decor {
-    font-size: 24px;
-    letter-spacing: 7px;
-    margin-bottom: 18px;
-    opacity: .65;
+.top-heart {
+    font-size: 27px;
+
+    margin-bottom: 12px;
+
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
 }
 
 
-/* TITLE */
+.small-title {
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #a27682;
+
+    margin-bottom: 13px;
+}
+
+
+/* BEAUTIFUL SCRIPT FONT */
 
 h1 {
-    margin: 0;
-    font-size: 31px;
-    font-weight: normal;
-    color: #76535d;
-    letter-spacing: .4px;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 58px;
+
+    font-weight: 400;
+
+    margin: 0 0 14px;
+
+    color: #8d5969;
+
+    line-height: 1.1;
 }
 
 
-/* MESSAGE */
+/* =========================
+   MESSAGE
+========================= */
 
-.subtitle {
-    margin: 17px auto 30px;
-    max-width: 320px;
+.message {
+
     font-size: 16px;
-    line-height: 1.7;
-    color: #8b7078;
+
+    line-height: 1.8;
+
+    color: #765963;
+
+    margin: 0 auto 28px;
+
+    max-width: 320px;
 }
 
 
-/* PASSWORD */
+/* =========================
+   PASSWORD LABEL
+========================= */
+
+.label {
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #a27682;
+
+    margin-bottom: 9px;
+}
+
+
+/* =========================
+   PASSWORD INPUT
+========================= */
 
 input {
+
     width: 100%;
-    padding: 16px;
 
-    border: 1px solid rgba(120,90,100,.16);
-    border-radius: 15px;
+    padding: 15px 18px;
 
-    background: rgba(255,255,255,.65);
+    border-radius: 18px;
+
+    border: 1px solid rgba(160,110,125,0.18);
+
+    background: rgba(255,255,255,0.72);
 
     outline: none;
 
     text-align: center;
 
-    font-size: 16px;
-    color: #604951;
+    font-family: "Playfair Display", serif;
 
-    transition: .3s;
+    font-size: 16px;
+
+    color: #684a54;
+
+    transition: 0.3s;
 }
 
 input::placeholder {
-    color: #aa969d;
+    color: #b99ca5;
 }
 
 input:focus {
-    background: rgba(255,255,255,.9);
-    border-color: rgba(130,90,105,.3);
-    box-shadow: 0 0 0 4px rgba(190,140,155,.08);
+
+    border-color: rgba(160,100,120,0.4);
+
+    box-shadow: 0 0 20px rgba(190,120,140,0.12);
 }
 
 
-/* BUTTON */
+/* =========================
+   BUTTON
+========================= */
 
 button {
+
     width: 100%;
-    margin-top: 18px;
-    padding: 16px;
+
+    margin-top: 15px;
+
+    padding: 15px;
 
     border: none;
-    border-radius: 15px;
+
+    border-radius: 18px;
 
     background: linear-gradient(
         135deg,
-        #8b626e,
-        #ad7e8b
+        #b77b8b,
+        #9d6475
     );
 
     color: white;
 
-    font-family: Georgia, serif;
-    font-size: 16px;
+    font-family: "Playfair Display", serif;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
 
     cursor: pointer;
 
-    box-shadow: 0 9px 24px rgba(120,80,95,.18);
+    box-shadow: 0 10px 25px rgba(140,80,100,0.18);
 
-    transition: .3s;
+    transition: 0.3s;
 }
 
 button:hover {
+
     transform: translateY(-2px);
-    box-shadow: 0 13px 28px rgba(120,80,95,.25);
+
+    box-shadow: 0 14px 30px rgba(140,80,100,0.24);
 }
 
 button:active {
-    transform: scale(.98);
+    transform: scale(0.98);
 }
 
 
-/* ERROR */
+/* =========================
+   ERROR MESSAGE
+========================= */
 
 #error {
-    display: none;
-    margin-top: 16px;
-    color: #a35f6d;
-    font-size: 14px;
-}
 
+    margin-top: 13px;
 
-/* BOTTOM */
+    min-height: 20px;
 
-.bottom {
-    margin-top: 25px;
     font-size: 13px;
-    color: #aa9299;
-    letter-spacing: 1px;
+
+    color: #b66b7b;
 }
+
+
+/* =========================
+   BOTTOM DECORATION
+========================= */
+
+.bottom-decoration {
+
+    margin-top: 28px;
+
+    font-size: 17px;
+
+    letter-spacing: 9px;
+
+    opacity: 0.55;
+}
+
+
+/* =========================
+   UNLOCK ANIMATION
+========================= */
+
+.unlock {
+
+    animation: unlock 0.8s ease forwards;
+}
+
+@keyframes unlock {
+
+    to {
+        opacity: 0;
+        transform: scale(1.08);
+        filter: blur(8px);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .login-box {
+        padding: 40px 24px 34px;
+        border-radius: 28px;
+    }
+
+    h1 {
+        font-size: 52px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+}
+
 </style>
 </head>
 
 
 <body>
 
-<!-- FLOATING HEARTS & SPARKLES -->
 
-<div class="floating">
-    <span>♡</span>
-    <span>♥</span>
-    <span>✦</span>
-    <span>♡</span>
-    <span>✧</span>
-    <span>♥</span>
-    <span>♡</span>
-    <span>✦</span>
-</div>
+<!-- SOFT BACKGROUND GLOWS -->
+
+<div class="glow"></div>
+<div class="glow2"></div>
 
 
-<!-- SOFT LIGHT -->
+<!-- FLOATING DECORATIONS -->
 
-<div class="light one"></div>
-<div class="light two"></div>
+<div class="decorations">
 
-
-<!-- LOGIN CARD -->
-
-<div class="login-box">
-
-    <div class="decor">
-        ♡ ✦ ♡
-    </div>
-
-    <h1>
-        A Little Surprise
-    </h1>
-
-    <div class="subtitle">
-        Something special has been
-        waiting here for you... 💕
-
-        <br>
-
-        Enter the secret password
-        to discover it.
-    </div>
-
-    <input
-        type="password"
-        id="password"
-        placeholder="Enter secret password"
-    >
-
-    <button onclick="unlock()">
-        Unlock My Surprise ♡
-    </button>
-
-    <div id="error">
-        Hmm... that's not the magic word ✨
-        <br>
-        Try again.
-    </div>
-
-    <div class="bottom">
-        made with a little love ♡
-    </div>
+    <span class="float heart">♡</span>
+    <span class="float heart">♥</span>
+    <span class="float flower">✿</span>
+    <span class="float sparkle">✦</span>
+    <span class="float heart">♡</span>
+    <span class="float flower">❀</span>
+    <span class="float sparkle">✧</span>
+    <span class="float heart">♥</span>
+    <span class="float flower">✿</span>
+    <span class="float sparkle">✦</span>
 
 </div>
+
+
+<!-- LOGIN PAGE -->
+
+<main class="page">
+
+    <section class="login-box" id="loginBox">
+
+        <div class="top-heart">
+            💕
+        </div>
+
+        <div class="small-title">
+            A little something for you
+        </div>
+
+        <h1>
+            A Little Surprise
+        </h1>
+
+        <p class="message">
+            Something special has been waiting here for you...
+            <br>
+            But first, there's a little secret to unlock. ♡
+        </p>
+
+
+        <div class="label">
+            Enter the secret password
+        </div>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Your secret password"
+            onkeydown="if(event.key==='Enter') checkPassword()"
+        >
+
+        <button onclick="checkPassword()">
+            Unlock My Surprise ♡
+        </button>
+
+        <div id="error"></div>
+
+        <div class="bottom-decoration">
+            ✧ ♡ ✧
+        </div>
+
+    </section>
+
+</main>
 
 
 <script>
 
-function unlock() {
+/* =========================
+   YOUR PASSWORD
+========================= */
 
-    const password =
+const correctPassword = "1234";
+
+
+function checkPassword() {
+
+    const enteredPassword =
         document.getElementById("password").value;
 
-    if (password === "1234") {
+    const error =
+        document.getElementById("error");
 
-        window.location.href = "gift.html";
+    const box =
+        document.getElementById("loginBox");
 
-    } else {
 
-        document.getElementById("error").style.display = "block";
+    if (enteredPassword === correctPassword) {
+
+        error.innerHTML = "Opening your surprise... ♡";
+
+        error.style.color = "#8d5969";
+
+        box.classList.add("unlock");
+
+
+        setTimeout(function() {
+
+            window.location.href = "gift.html";
+
+        }, 800);
+
+    }
+
+    else {
+
+        error.innerHTML =
+            "Hmm... that's not the secret password ♡";
+
+        document.getElementById("password").value = "";
 
     }
 
 }
 
 </script>
+
 
 </body>
 </html>
