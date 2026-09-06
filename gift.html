@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>A Little Surprise 🎁</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -15,239 +17,607 @@
 body {
     margin: 0;
     min-height: 100vh;
+    overflow: hidden;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+
     background:
-        radial-gradient(circle at 20% 20%, #fff5f8, transparent 35%),
-        radial-gradient(circle at 80% 80%, #ffe1eb, transparent 40%),
-        linear-gradient(135deg, #fff8fa, #fbdce7);
+        radial-gradient(circle at 20% 15%, rgba(255,255,255,0.95), transparent 30%),
+        radial-gradient(circle at 85% 85%, rgba(255,190,210,0.45), transparent 35%),
+        linear-gradient(135deg, #fff9fb, #f9dce7);
+
     font-family: "Cormorant Garamond", serif;
     color: #704654;
+
     position: relative;
 }
 
-/* Floating hearts */
+
+/* =========================
+   BACKGROUND HEARTS
+========================= */
+
 .heart {
     position: fixed;
-    color: #e9a8ba;
-    opacity: 0.45;
-    font-size: 20px;
-    animation: float 6s ease-in-out infinite;
+    color: #d9829d;
+    opacity: 0.35;
+    font-size: 24px;
+    pointer-events: none;
+
+    animation: floatingHeart 6s ease-in-out infinite;
 }
 
-.h1 { left: 10%; top: 15%; animation-delay: 0s; }
-.h2 { left: 82%; top: 18%; animation-delay: 1.5s; }
-.h3 { left: 18%; bottom: 15%; animation-delay: 3s; }
-.h4 { right: 12%; bottom: 20%; animation-delay: 4s; }
+.h1 {
+    left: 9%;
+    top: 16%;
+}
 
-@keyframes float {
-    0%, 100% {
+.h2 {
+    right: 10%;
+    top: 20%;
+    animation-delay: 1.5s;
+}
+
+.h3 {
+    left: 13%;
+    bottom: 18%;
+    animation-delay: 3s;
+}
+
+.h4 {
+    right: 12%;
+    bottom: 16%;
+    animation-delay: 4.5s;
+}
+
+@keyframes floatingHeart {
+
+    0%,100% {
         transform: translateY(0) rotate(0deg);
     }
+
     50% {
-        transform: translateY(-20px) rotate(8deg);
+        transform: translateY(-22px) rotate(8deg);
     }
 }
 
-/* Main box */
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkle {
+    position: fixed;
+    color: #d2a15d;
+    font-size: 18px;
+    pointer-events: none;
+
+    animation: sparkle 3s ease-in-out infinite;
+}
+
+.s1 {
+    left: 23%;
+    top: 28%;
+}
+
+.s2 {
+    right: 22%;
+    top: 32%;
+    animation-delay: 1s;
+}
+
+.s3 {
+    left: 25%;
+    bottom: 28%;
+    animation-delay: 1.8s;
+}
+
+.s4 {
+    right: 25%;
+    bottom: 25%;
+    animation-delay: 2.5s;
+}
+
+@keyframes sparkle {
+
+    0%,100% {
+        opacity: 0.25;
+        transform: scale(0.8) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(20deg);
+    }
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
 .container {
-    width: 90%;
-    max-width: 500px;
+    width: 92%;
+    max-width: 520px;
     text-align: center;
-    padding: 35px 20px;
+
+    position: relative;
+    z-index: 5;
 }
 
 .small-text {
     font-size: 18px;
     letter-spacing: 2px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 h1 {
     font-family: "Great Vibes", cursive;
-    font-size: 48px;
+    font-size: 56px;
     font-weight: 400;
-    margin: 0 0 25px;
-    color: #a95f78;
+
+    margin: 0 0 18px;
+
+    color: #a85f78;
+
+    text-shadow:
+        0 2px 8px rgba(168,95,120,0.12);
 }
 
 .message {
     font-size: 20px;
     line-height: 1.5;
-    margin-bottom: 30px;
+
+    margin: 0 auto 22px;
+
+    max-width: 420px;
 }
 
-/* Gift */
+
+/* =========================
+   GIFT AREA
+========================= */
+
 .gift-area {
-    cursor: pointer;
     display: inline-block;
-    transition: transform 0.3s ease;
+
+    cursor: pointer;
+
+    padding: 25px;
+
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
 }
 
 .gift-area:hover {
     transform: scale(1.05);
+    filter: brightness(1.03);
 }
+
+.gift-area:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================
+   GIFT
+========================= */
 
 .gift {
-    width: 150px;
-    height: 125px;
+    width: 180px;
+    height: 155px;
+
     position: relative;
-    margin: 25px auto 15px;
+
+    margin: 5px auto 10px;
+
+    animation: giftFloat 3s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 18px 18px rgba(125,65,85,0.18));
 }
+
+@keyframes giftFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
 
 /* Gift body */
+
 .gift-body {
     position: absolute;
+
+    left: 10px;
     bottom: 0;
-    left: 5px;
-    width: 140px;
-    height: 95px;
-    background: linear-gradient(135deg, #d77c98, #b95778);
-    border-radius: 8px;
-    box-shadow: 0 12px 25px rgba(130, 65, 85, 0.22);
+
+    width: 160px;
+    height: 105px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dc89a3,
+            #b95678
+        );
+
+    border-radius: 9px;
+
+    box-shadow:
+        inset 0 3px 8px rgba(255,255,255,0.18),
+        inset 0 -8px 12px rgba(120,45,70,0.12);
 }
+
 
 /* Vertical ribbon */
+
 .gift-body::before {
     content: "";
+
     position: absolute;
-    left: 57px;
+
+    left: 67px;
     top: 0;
-    width: 26px;
-    height: 95px;
-    background: #f6d29b;
+
+    width: 27px;
+    height: 105px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f2cd91,
+            #f8dcae,
+            #e5bd7d
+        );
 }
 
-/* Gift lid */
+
+/* Lid */
+
 .lid {
     position: absolute;
+
     left: 0;
-    top: 8px;
-    width: 150px;
-    height: 35px;
-    background: linear-gradient(135deg, #e18da7, #c56382);
-    border-radius: 7px;
-    box-shadow: 0 5px 10px rgba(130, 65, 85, 0.18);
-    z-index: 2;
+    top: 12px;
+
+    width: 180px;
+    height: 38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e397ad,
+            #c76584
+        );
+
+    border-radius: 8px;
+
+    z-index: 4;
+
+    box-shadow:
+        0 5px 10px rgba(120,55,75,0.15);
+
+    transform-origin: 50% 100%;
+
+    transition:
+        transform 0.8s cubic-bezier(.2,.8,.2,1),
+        top 0.8s ease;
 }
+
+
+/* Ribbon on lid */
 
 .lid::before {
     content: "";
+
     position: absolute;
-    left: 62px;
+
+    left: 76px;
     top: 0;
-    width: 26px;
-    height: 35px;
-    background: #f6d29b;
+
+    width: 27px;
+    height: 38px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f2cd91,
+            #f8dcae,
+            #e5bd7d
+        );
 }
 
-/* Bow */
+
+/* =========================
+   BOW
+========================= */
+
 .bow-left,
 .bow-right {
+
     position: absolute;
+
     top: -18px;
-    width: 42px;
-    height: 30px;
-    background: #f6d29b;
+
+    width: 52px;
+    height: 34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8dcae,
+            #e6bd7d
+        );
+
     border-radius: 50%;
-    z-index: 3;
+
+    z-index: 6;
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.6s ease;
 }
 
 .bow-left {
-    left: 42px;
+    left: 43px;
     transform: rotate(-25deg);
 }
 
 .bow-right {
-    right: 42px;
+    right: 43px;
     transform: rotate(25deg);
 }
 
 .bow-center {
+
     position: absolute;
+
     top: -10px;
-    left: 67px;
-    width: 18px;
-    height: 20px;
-    background: #e7bd7d;
+    left: 80px;
+
+    width: 22px;
+    height: 23px;
+
+    background: #e2b56f;
+
     border-radius: 50%;
-    z-index: 4;
+
+    z-index: 7;
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.6s ease;
 }
+
+
+/* =========================
+   OPENING ANIMATION
+========================= */
+
+.gift-area.opening .gift {
+    animation: none;
+}
+
+.gift-area.opening .lid {
+
+    transform:
+        translateY(-55px)
+        rotate(-8deg);
+}
+
+.gift-area.opening .bow-left {
+
+    transform:
+        translate(-20px,-48px)
+        rotate(-35deg);
+
+    opacity: 0;
+}
+
+.gift-area.opening .bow-right {
+
+    transform:
+        translate(20px,-48px)
+        rotate(35deg);
+
+    opacity: 0;
+}
+
+.gift-area.opening .bow-center {
+
+    transform: translateY(-48px);
+
+    opacity: 0;
+}
+
+
+/* =========================
+   INSTRUCTION
+========================= */
 
 .instruction {
-    font-size: 18px;
-    margin-top: 15px;
-    color: #966172;
-    animation: pulse 2s infinite;
+
+    font-size: 19px;
+
+    color: #986174;
+
+    margin-top: 8px;
+
+    animation:
+        gentlePulse 2s ease-in-out infinite;
 }
 
-@keyframes pulse {
-    0%, 100% {
+@keyframes gentlePulse {
+
+    0%,100% {
         opacity: 0.65;
     }
+
     50% {
         opacity: 1;
     }
 }
 
-/* Small decoration */
-.sparkle {
-    position: absolute;
-    color: #d6a05b;
-    font-size: 18px;
-}
 
-.s1 { top: 30%; left: 25%; }
-.s2 { top: 35%; right: 23%; }
-.s3 { bottom: 30%; left: 28%; }
-.s4 { bottom: 32%; right: 27%; }
+/* =========================
+   BOTTOM NOTE
+========================= */
 
 .note {
-    margin-top: 25px;
+
+    margin-top: 12px;
+
     font-size: 16px;
-    opacity: 0.7;
+
+    opacity: 0.65;
+
+    letter-spacing: 0.5px;
 }
+
+
+/* =========================
+   HEART BURST
+========================= */
+
+.burst-heart {
+
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    font-size: 24px;
+
+    pointer-events: none;
+
+    z-index: 20;
+
+    animation:
+        heartBurst 1.2s ease-out forwards;
+}
+
+@keyframes heartBurst {
+
+    0% {
+        opacity: 1;
+        transform:
+            translate(-50%,-50%)
+            scale(0.4);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.5)
+            rotate(var(--r));
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .message {
+        font-size: 19px;
+    }
+
+    .gift {
+        transform: scale(0.9);
+    }
+
+    .small-text {
+        font-size: 16px;
+    }
+}
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- Floating hearts -->
 
 <div class="heart h1">♡</div>
 <div class="heart h2">♡</div>
 <div class="heart h3">♡</div>
 <div class="heart h4">♡</div>
 
+
+<!-- Sparkles -->
+
 <div class="sparkle s1">✦</div>
 <div class="sparkle s2">✧</div>
 <div class="sparkle s3">✧</div>
 <div class="sparkle s4">✦</div>
 
+
+<!-- Main -->
+
 <div class="container">
 
-    <div class="small-text">Something special is waiting...</div>
-
-    <h1>For You ♡</h1>
-
-    <div class="message">
-        I have a little surprise waiting for you.
-        <br>
-        Take a moment and open it... 🎀
+    <div class="small-text">
+        Something special is waiting...
     </div>
 
-    <div class="gift-area" onclick="openGift()">
+    <h1>
+        For You ♡
+    </h1>
+
+    <div class="message">
+
+        I have a little surprise waiting for you.
+
+        <br>
+
+        Take a moment and open it... 🎀
+
+    </div>
+
+
+    <!-- Gift -->
+
+    <div
+        class="gift-area"
+        onclick="openGift()"
+    >
 
         <div class="gift">
 
             <div class="bow-left"></div>
+
             <div class="bow-right"></div>
+
             <div class="bow-center"></div>
 
             <div class="lid"></div>
+
             <div class="gift-body"></div>
 
         </div>
+
 
         <div class="instruction">
             Tap the gift to open it ♡
@@ -255,25 +625,112 @@ h1 {
 
     </div>
 
+
     <div class="note">
         Made with a little love 💗
     </div>
 
 </div>
 
+
+
 <script>
+
+/* =========================
+   OPEN GIFT
+========================= */
+
 function openGift() {
 
-    document.querySelector(".gift-area").style.transform = "scale(1.15)";
+    const giftArea =
+        document.querySelector(".gift-area");
+
+    if (giftArea.classList.contains("opening")) {
+        return;
+    }
+
+    giftArea.classList.add("opening");
+
+
+    /* Create heart burst */
+
+    const hearts = [
+        "♡",
+        "♥",
+        "♡",
+        "✦",
+        "♡",
+        "♥",
+        "✧",
+        "♡"
+    ];
+
+
+    hearts.forEach(function(symbol, index) {
+
+        const heart =
+            document.createElement("div");
+
+        heart.className = "burst-heart";
+
+        heart.innerHTML = symbol;
+
+        const angle =
+            (index / hearts.length) *
+            Math.PI * 2;
+
+        const distance =
+            100 + Math.random() * 90;
+
+        const x =
+            Math.cos(angle) * distance;
+
+        const y =
+            Math.sin(angle) * distance;
+
+        heart.style.setProperty(
+            "--x",
+            x + "px"
+        );
+
+        heart.style.setProperty(
+            "--y",
+            y + "px"
+        );
+
+        heart.style.setProperty(
+            "--r",
+            ((Math.random() * 60) - 30) + "deg"
+        );
+
+        document.body.appendChild(heart);
+
+
+        setTimeout(function() {
+            heart.remove();
+        }, 1300);
+
+    });
+
+
+    /* Go to sister page */
 
     setTimeout(function() {
-        window.location.href = "sister.html";
-    }, 500);
+
+        window.location.href =
+            "sister.html";
+
+    }, 1100);
+
 }
+
 </script>
 
+
 </body>
-  </html>
+</html>
+
+
 
 
 
